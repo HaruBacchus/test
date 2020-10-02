@@ -1,13 +1,9 @@
 from discord.ext import commands
 import os
 import traceback
-import discord
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-
-if not discord.opus.is_loaded():
-    discord.opus.load_opus("heroku-buildpack-libopus")
 
 @bot.event
 async def on_command_error(ctx, error):
